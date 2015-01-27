@@ -26,7 +26,6 @@ App.config(function ($stateProvider,$urlRouterProvider) {
 			data: {pageTitle: 'LIST'},
 			controller: 'list'
 		});
-
 });
 
 

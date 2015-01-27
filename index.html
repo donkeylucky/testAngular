@@ -17,8 +17,9 @@
 				</div>
 				<div class="collapse navbar-collapse" ng-controller="switchTab">
 					<ul class="nav navbar-nav">
-						<li class="active" ng-click="activeIt()" ng-class="{active:isAct}"><a href="#/index">index</a></li>
-						<li ng-click="activeIt()" ng-class="{active:isAct}"><a href="#/list">list</a></li>
+						<li ng-repeat="tab in tabs" ng-class="{active:isAct(tab.url)}" ng-click="getUrl(tab.url)">
+							<a href="{{tab.url}}" data-ng-bind="tab.name"></a>
+						</li>
 					</ul>
 				</div>
 			</div>
