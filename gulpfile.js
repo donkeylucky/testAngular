@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 gulp.task('watch', function () {
 
     livereload.listen();
-    gulp.watch('./**/*.*').on('change',function(e){
+    gulp.watch(['./index.html','./js/**/*.*','./tpls/**/*.*']).on('change',function(e){
         //console.log('Event path: ' + e.path);
         livereload.changed(e.path);
     });
