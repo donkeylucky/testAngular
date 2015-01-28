@@ -1,0 +1,36 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				<img alt="logo" width="20px" src="http://img.mukewang.com/user/541fe3040001f18401800180-40-40.jpg">
+			</a>
+		</div>
+		<div class="" ng-controller="switchTab">
+			<!--<ul class="nav navbar-nav">
+				<li ng-repeat="tab in tabs" ng-class="{active:isAct(tab.url)}" ng-click="getUrl(tab.url)">
+					<a href="{{tab.url}}" data-ng-bind="tab.name"></a>
+				</li>
+			</ul>-->
+			<!--<ul class="nav navbar-nav">
+					{{$state.$current.url.source}}
+					{{$state.includes('index.'+tab.url)}}
+				<li ng-repeat="tab in tabs" ng-class="{active:('#'+$state.$current.url.source==tab.url)}">
+					<a href="{{tab.url}}" data-ng-bind="tab.name"></a>
+				</li>
+			</ul>-->
+			<ul class="nav navbar-nav">
+				<li ng-repeat="tab in tabs" ng-class="{active:$state.includes('index.'+tab.url)}">
+					<a href="" data-ng-bind="tab.name" ui-sref="index.{{tab.url}}({id:tab.id})"></a>
+					{{tab.id}}
+					{{ $state.$current.url.source }}
+				</li>
+			</ul>
+			</ul>
+		</div>
+	</div>
+</nav>
+<input type="text" ng-model="test.txt"/>
+<p data-ng-bind="'INPUT文本:'+test.txt"></p>
+
+<div ui-view></div>
+<div class="" data-ng-include="'tpls/t.html'"></div>

@@ -26,14 +26,18 @@ helloModule.controller('list',['$scope',function ($scope) {
 //切换标签
 helloModule.controller('switchTab',['$scope',function ($scope) {
     $scope.tabs = [{
-        name:'index',
-        url:'#/index'
+        name:'hello',
+        url:'hello'
     },{
         name:'list',
-        url:'#/list'
+        url:'list'
+    },{
+	    name:'list2',
+	    url:'list',
+	    id:'234'
     }];
 
-    //设定默认的激活标签
+   /* //设定默认的激活标签
     $scope.currentTab = '#/index';
 
     //获取当前点击的标签url并为重新赋值给currentTab
@@ -44,6 +48,6 @@ helloModule.controller('switchTab',['$scope',function ($scope) {
     //标签url与currentTab的url相同返回true
     $scope.isAct = function(url){
         return url === $scope.currentTab;
-    };
+    };*/
 
 }]);
