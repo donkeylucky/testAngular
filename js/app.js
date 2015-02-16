@@ -4,17 +4,19 @@
 
 //给"ng-app"启动点定义名称叫"App",并写入他的依赖对应的模块,赋值给App变量
 var App = angular.module('App',[
-	'HelloAngular',
+	'AppController',
+    'AppDirctive',
 	'ui.router',
 	//'ui.bootstrap'
 ]);
+
 
 
 //设置路由
 App.config(function ($stateProvider,$urlRouterProvider) {
 	$urlRouterProvider
 		//.when('', '/index')
-		.when('/index?id', '/index/:id')
+		//.when('/index?id', '/index/:id')
 		.otherwise('/index/hello');
 	$stateProvider
 		.state('index',{
@@ -34,11 +36,24 @@ App.config(function ($stateProvider,$urlRouterProvider) {
 			data: {pageTitle: 'LIST'},
 			controller: 'list'
 		})
-		/*.state('list',{
-			url:'/list',
+		.state('index.list2',{
+			url:'/list2?pid',
 			templateUrl:'tpls/inner.html',
+			controller: function($scope, $stateParams) {
+				$scope.listId = $stateParams.listId;
+			},
 			data: {pageTitle: 'inner'}
-		});*/
+		})
+        .state('index.scope',{
+            url:'/scope',
+            templateUrl:'tpls/ng-isolate-scope.html',
+            data: {pageTitle: 'index'}
+        })
+        .state('index.game',{
+            url:'/game',
+            templateUrl:'tpls/game.html',
+            data: {pageTitle: 'index'}
+        });
 });
 
 
@@ -48,4 +63,5 @@ App.run(["$rootScope","$state",'$stateParams',
 		$rootScope.$state = $state;
 		$rootScope.$stateParams = $stateParams;
 	}
+
 ]);

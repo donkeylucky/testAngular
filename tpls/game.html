@@ -1,0 +1,14 @@
+<div ng-controller="imgList">
+	<superman loadImg="loadImg()">显示美图</superman>
+	<superman strength>一般超人</superman>
+	<superman strength speed>中级超人</superman>
+	<superman strength speed flash="">超级超人</superman>
+
+	<div class="row">
+		<div class="col-xs-6 col-md-3" ng-repeat="li in listData">
+			<a class="thumbnail" >
+				<img src="{{li.url}}" alt="{{li.name}}"/>
+			</a>
+		</div>
+	</div>
+</div>

@@ -20,9 +20,7 @@
 			</ul>-->
 			<ul class="nav navbar-nav">
 				<li ng-repeat="tab in tabs" ng-class="{active:$state.includes('index.'+tab.url)}">
-					<a href="" data-ng-bind="tab.name" ui-sref="index.{{tab.url}}({id:tab.id})"></a>
-					{{tab.id}}
-					{{ $state.$current.url.source }}
+					<a href="" data-ng-bind="tab.name" ui-sref=".{{tab.url}}({pid:tab.id})"></a>
 				</li>
 			</ul>
 			</ul>
@@ -31,6 +29,7 @@
 </nav>
 <input type="text" ng-model="test.txt"/>
 <p data-ng-bind="'INPUT文本:'+test.txt"></p>
-
+{{ $state.$current.url.source }}
 <div ui-view></div>
 <div class="" data-ng-include="'tpls/t.html'"></div>
+
