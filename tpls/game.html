@@ -1,5 +1,5 @@
 <div ng-controller="imgList">
-	<superman loadImg="loadImg()">显示美图</superman>
+	<pic loadImg="loadImg()">显示美图</pic>
 	<superman strength>一般超人</superman>
 	<superman strength speed>中级超人</superman>
 	<superman strength speed flash="">超级超人</superman>
@@ -11,4 +11,7 @@
 			</a>
 		</div>
 	</div>
+	<br/>
+	{{clock | date:"yyyy-MM-dd hh:mm:ss"}}
 </div>
+
